@@ -1,0 +1,19 @@
+<div ng-controller="admin" style="height:600px;">
+    <div id="fabu">
+        <h2>文章发布</h2>
+        <div id="fabuImg">
+            <span>图片地址: </span><input type="text" name="" ng-model="fabu.Url">
+        </div>
+        <div id="fabuTitle">
+            <span>文章标题：</span><input type="text" name="title" ng-model="fabu.Title">
+        </div>
+        <textarea cols="130" rows="9" id="fabuCont" ng-model="fabu.Cont"></textarea>
+        <div id="fabuName">
+            <span>作者：<input type="text" name="zuozhe" ng-model="fabu.Name"></span>
+        </div>
+
+        <input type="submit" name="submit" value="发布" id="submit" ng-click="sub()">
+        <div style="position: absolute; bottom: 10px; left:250px;">{{code}}</div>
+    </div>
+
+</div>

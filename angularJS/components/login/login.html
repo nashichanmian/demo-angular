@@ -1,0 +1,44 @@
+<!-- 登陆 -->
+
+<div ng-controller="login" id="login" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <button id='close' type="button" class="close" data-dismiss="modal">
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close</span>
+      </button>
+      <h3 class="login_Title">login</h3>
+      <form class="form-horizontal" role="form" name="loginForm">
+        <div class="form-group username">
+          <label for="inputEmail3" class="col-sm-2 control-label" >用 户 名:</label>
+          <div class="col-sm-8">
+            <input type="email" name="name" class="form-control" id="inputEmail3" placeholder="Email" ng-model='user.name'>
+          </div>
+        </div>
+        <div class="form-group public1" >
+          <label for="inputPassword3" class="col-sm-2 control-label">密&nbsp;&nbsp;&nbsp;&nbsp;码 :</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Password" ng-model='user.password' name="password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-8">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Remember me
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div id="hint">{{showinfo}}</div>
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" class="btn btn-default fr pablic2" data-dismiss="modal">取消</button>
+            <button type="submit" class="btn btn-default fr" ng-click="myform()">登录</button>
+          </div>
+        </div>
+      </form>
+      <!-- asd -->
+    </div>
+  </div>
+</div>

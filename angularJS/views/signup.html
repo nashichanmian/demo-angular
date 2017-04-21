@@ -1,0 +1,77 @@
+<!-- 注册 -->
+<div ng-controller="signup" id="foo" class="modal fade foo"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <button id="close2" type="button" class="close" data-dismiss="modal">
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close</span>
+      </button>
+      <h3 class="login_Title">signup</h3>
+      <form class="form-horizontal" role="form" name="signupForm" ng-submit="submitForm()">
+        <div class="form-group username" ng-class="{'has-success': signupForm.username.$valid}">
+          <label for="inputEmail3" class="col-sm-2 control-label">用 户 名:</label>
+          <div class="col-sm-8">
+            <input type="email" class="form-control" id="inputEmail3" name="username" placeholder="Email"
+            ng-model="user.name"
+            ng-minlength="10"
+            ng-maxlength="20"
+            required />
+            <p class="error" ng-if="
+            signupForm.username.$error.required &&
+            signupForm.username.$touched"
+            >用户名不可为空！</p>
+            <p class="error" ng-if="
+            (signupForm.username.$error.minlength ||
+            signupForm.username.$error.maxlength) &&
+            signupForm.username.$touched"
+            >用户名长度应在10至20位之间！</p>
+          </div>
+        </div>
+
+        <div class="form-group public1" ng-class="{'has-success': signupForm.password.$valid}">
+          <label for="inputPassword3" class="col-sm-2 control-label">密&nbsp;&nbsp;&nbsp;&nbsp;码 :</label>
+          <div class="col-sm-8">
+            <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password" ng-model="user.password"
+            ng-minlength="6"
+            ng-maxlength="64"
+            required />
+            <p class="error" ng-if="
+            signupForm.password.$error.required &&
+            signupForm.password.$touched"
+            >
+              密码不可为空！
+            </p>
+            <p class="error" ng-if="
+            (signupForm.password.$error.minlength ||
+             signupForm.password.$error.maxlength) &&
+             signupForm.password.$touched"
+            >
+              密码长度应在6至64位之间！
+            </p>
+          </div>
+        </div>
+
+        <div class="form-group public1" ng-class="{'has-success': signupForm.password2.$valid}">
+          <label for="inputPassword3" class="col-sm-2 control-label">确认密码:</label>
+          <div class="col-sm-8">
+            <input type="password" name="password2" class="form-control" id="inputPassword3" placeholder="Password" ng-model="user.password2"
+            compare="user.password"
+            required />
+            <p class="error" ng-if="
+            signupForm.password2.$error.compare &&
+            signupForm.password.$touched"
+            >两次输入密码不一致！</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div id="hint">{{showinfo}}</div>
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" class="btn btn-default fr pablic2" data-dismiss="modal">取消</button>
+            <button type="submit" class="btn btn-default fr" ng-disabled="signupForm.$invalid">立即注册</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

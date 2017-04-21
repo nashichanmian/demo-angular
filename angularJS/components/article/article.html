@@ -1,0 +1,40 @@
+<div style="width:100%;height: 70px;">
+</div>
+<div style="min-height: 800px;" ng-controller="article" style="position:relative;">
+    <div class="content clear-float" id="content">
+        <div class="left-container">
+            <!--  最新发布的文章在这里显示，每一个section是一篇文章-->
+            <div class="title-section">文章列表</div>
+            <section ng-repeat="arr in Json" ng-click="fnAcc(arr.ID)">
+
+                <div class="article-preview ">
+                    <div class="img-section">
+                        <img class="img-rounded" ng-src={{arr.Url}}>
+                    </div>
+                    <div class="text-section">
+                        <a href="#/article/{{arr.ID}}"><h3>{{arr.Title}}</h3></a>
+                        <div>
+                            {{arr.Cont}}
+                        </div>
+                        <ul class="text-bottom">
+                            <li><span class="glyphicon glyphicon-user"> {{arr.Name}}</span></li>
+                            <li><span class="glyphicon glyphicon-time"> {{arr.Time}}</span></li>
+                            <li><span class="glyphicon glyphicon-eye-open">{{arr.clicks}}</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+            <div id="page">
+                    <ul class="pagination">
+                        <li><a href="#">&laquo;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
